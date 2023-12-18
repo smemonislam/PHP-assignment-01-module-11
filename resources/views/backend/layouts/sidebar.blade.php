@@ -2,7 +2,7 @@
     <!-- LOGO -->
     <div class="navbar-brand-box">
         <!-- Dark Logo-->
-        <a href="{{ asset('/dashboard') }}" class="logo logo-dark">
+        <a href="{{ route('dashboard') }}" class="logo logo-dark">
             <span class="logo-sm">
                 <img src="{{ asset('assets/images/Logo.png') }}" alt="" height="22">
             </span>
@@ -11,7 +11,7 @@
             </span>
         </a>
         <!-- Light Logo-->
-        <a href="{{ asset('/dashboard') }}" class="logo logo-light">
+        <a href="{{ route('dashboard') }}" class="logo logo-light">
             <span class="logo-sm">
                 <img src="{{ asset('assets/images/Logo.png') }}" alt="" height="22">
             </span>
@@ -41,7 +41,7 @@
                         <ul class="nav nav-sm flex-column">
 
                             <li class="nav-item">
-                                <a href="{{ asset('/dashboard') }}" class="nav-link" data-key="t-ecommerce"> Ecommerce
+                                <a href="{{ route('dashboard') }}" class="nav-link" data-key="t-ecommerce"> Dashboard
                                 </a>
                             </li>
 
@@ -50,9 +50,11 @@
                 </li> <!-- end Dashboard Menu -->
 
 
+                
+
+
+                  
                 <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">Product</span></li>
-
-
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="#sidebarOffice" data-bs-toggle="collapse" role="button"
                         aria-expanded="false" aria-controls="sidebarOffice">
@@ -61,20 +63,10 @@
                     <div class="collapse menu-dropdown" id="sidebarOffice">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a href="#sidebarProjects" class="nav-link" data-bs-toggle="collapse" role="button"
-                                    aria-expanded="false" aria-controls="sidebarProjects" data-key="t-projects">
-                                    Products
-                                </a>
-                                <div class="collapse menu-dropdown" id="sidebarProjects">
-                                    <ul class="nav nav-sm flex-column">                                        
-                                        <li class="nav-item">
-                                            <a href="{{ route('product.index') }}" class="nav-link"
-                                                data-key="t-add">Porduct </a>
-                                        </li>
-                                    </ul>
-                                </div>
+                                <a href="{{ route('product.index') }}" class="nav-link" data-key="t-add">Porduct </a> 
+                                <a href="{{ route('sales.create') }}" class="nav-link" data-key="t-add">Sales </a> 
+                                <a href="{{ route('sales.index') }}" class="nav-link" data-key="t-add">Transaction </a> 
                             </li>
-
                         </ul>
                     </div>
                 </li>
