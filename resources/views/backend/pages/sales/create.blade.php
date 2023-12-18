@@ -44,14 +44,15 @@
                                 <div class="row">
                                     <div class="col-lg-6 mb-3">
                                         <div class="mb-lg-0">
-                                            <label for="status" class="form-label">
+                                            <label for="product_id" class="form-label">
                                                 Product Name
                                                 <span class="text-danger">*</span>
                                             </label>
                                             <div class="input-group">
-                                                <select class="form-select" name="product_id" id="choices-status-input">
+                                                <select class="form-select" name="product_id" id="product_id">
+                                                    <option selected disabled>Choose Products...</option>
                                                     @foreach($products as $product)
-                                                    <option value="{{ $product->id }}">{{ $product->product_name }}</option>
+                                                        <option value="{{ $product->id }}" data-price="{{ $product->price }}">{{ $product->product_name }}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
@@ -59,24 +60,24 @@
                                     </div>
                                     <div class="col-lg-6 mb-3">
                                         <div class="mb-lg-0">
-                                            <label for="choices-status-input" class="form-label">
+                                            <label for="price-input" class="form-label">
                                                 Price
                                                 <span class="text-danger">*</span>
                                             </label>
-                                            <input type="text" name="price" class="form-control">
+                                            <input type="text" name="price" class="form-control" id="price-input" readonly>
                                         </div>
                                     </div>
                                     <div class="col-lg-6 mb-3">
                                         <div class="mb-lg-0">
-                                            <label for="choices-status-input" class="form-label">
+                                            <label for="quantity" class="form-label">
                                                 Quantity
                                                 <span class="text-danger">*</span>
                                             </label>
-                                            <input type="text" name="quantity" class="form-control">
+                                            <input type="text" name="quantity" class="form-control" id="quantity">
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn btn-info">Sales</button>
                                 </div>
+                                <button type="submit" class="btn btn-info">Sales</button>
                             </form>
                         </div>
                         <!-- end card body -->
@@ -99,3 +100,16 @@
 <!-- end main content-->
 
 @endsection
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // Handle change event on the dropdown
+        $('#product_id').change(function () {
+            // Get the selected option
+            var selectedOption = $(this).find('option:selected');
+
+            // Update the price input with the data-price attribute of the selected option
+            $('#price-input').val(selectedOption.data('price'));
+        });
+    });
+</script>

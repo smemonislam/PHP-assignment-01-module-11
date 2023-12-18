@@ -7,8 +7,7 @@
 <script src="{{ asset('assets/js/plugins.js') }}"></script>
 
 
-
-<!-- project list init -->
+init -->
 <script src="{{ asset('assets/js/pages/project-list.init.js') }}"></script>
 
 <!-- validation init -->
@@ -154,3 +153,4 @@
 
 <!-- ecommerce-order init js -->
 <script src="{{ asset('assets/js/pages/ecommerce-order.init.js') }}"></script>
+<!-- project list 
