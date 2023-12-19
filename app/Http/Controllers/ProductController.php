@@ -24,7 +24,6 @@ class ProductController extends Controller
         $request->validate([
             "product_name"      => 'required',
             "price"             => 'required',
-            "quantity"          => 'required|integer',
             "stock"             => 'required',
             "thumbnail"         => 'required|image|mimes:jpg,png,jpeg',
             "short_desc"        => 'required|string|max: 255',
@@ -41,7 +40,6 @@ class ProductController extends Controller
             'product_name'  => $request->input('product_name'),
             'product_slug'  => Str::slug($request->input('product_name')),
             'price'         => $request->input('price'),
-            'quantity'      => $request->input('quantity'),
             'stock'         => $request->input('stock'),
             'short_desc'    => $request->input('short_desc'),
             'description'   => $request->input('description'),
@@ -69,7 +67,6 @@ class ProductController extends Controller
         $request->validate([
             "product_name"      => 'required',
             "price"             => 'required',
-            "quantity"          => 'required|integer',
             "stock"             => 'required',
             "thumbnail"         => 'nullable|image|mimes:jpg,png,jpeg',
             "short_desc"        => 'required|string|max: 255',
@@ -92,7 +89,6 @@ class ProductController extends Controller
             'product_name'  => $request->input('product_name'),
             'product_slug'  => Str::slug($request->input('product_name')),
             'price'         => $request->input('price'),
-            'quantity'      => $request->input('quantity'),
             'stock'         => $request->input('stock'),
             'short_desc'    => $request->input('short_desc'),
             'description'   => $request->input('description'),

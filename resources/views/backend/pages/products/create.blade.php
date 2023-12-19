@@ -48,7 +48,7 @@
                                                 Product Name
                                                 <span class="text-danger">*</span>
                                             </label>
-                                            <input type="text" name="product_name" class="form-control">
+                                            <input type="text" name="product_name" class="form-control" value="{{ old('product_name') }}">
                                         </div>
                                     </div>
                                     <div class="col-lg-6 mb-3">
@@ -57,16 +57,7 @@
                                                 Price
                                                 <span class="text-danger">*</span>
                                             </label>
-                                            <input type="text" name="price" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 mb-3">
-                                        <div class="mb-lg-0">
-                                            <label for="choices-status-input" class="form-label">
-                                                Quantity
-                                                <span class="text-danger">*</span>
-                                            </label>
-                                            <input type="text" name="quantity" class="form-control">
+                                            <input type="text" name="price" class="form-control" value="{{ old('price') }}">
                                         </div>
                                     </div>
                                     <div class="col-lg-6 mb-3">
@@ -75,7 +66,7 @@
                                                 Stock
                                                 <span class="text-danger">*</span>
                                             </label>
-                                            <input type="text" name="stock" class="form-control">
+                                            <input type="text" name="stock" class="form-control" value="{{ old('stock') }}">
                                         </div>
                                     </div>
                                     <div class="col-lg-6 mb-3">
@@ -89,10 +80,10 @@
                                     </div>
                                     <div class="col-lg-6 mb-3">
                                         <div class="mb-lg-0">
-                                            <label for="choices-status-input" class="form-label">
+                                            <label for="choices-status-input" class="form-label"> 
                                                 Short Description
                                             </label>
-                                            <input type="text" name="short_desc" class="form-control">
+                                            <input type="text" name="short_desc" class="form-control" value="{{ old('short_desc') }}">
                                         </div>
                                     </div>
                                     <div class="col-lg-12 mb-3">
@@ -100,7 +91,7 @@
                                             <label for="choices-status-input" class="form-label">
                                                 Description
                                             </label>
-                                            <textarea name="description" class="form-control" id="" cols="30" rows="10"></textarea>
+                                            <textarea name="description" class="form-control" id="" cols="30" rows="10">{{ old('description') }}</textarea>
                                         </div>
                                     </div>
                                     <button type="submit" class="btn btn-info">Save</button>

@@ -12,7 +12,7 @@ class SalesController extends Controller
     public function index(){
         $transactions = DB::table('sales as s')
         ->join('products as p', 'p.id', 's.product_id')
-        ->select( 's.price', 's.quantity', 's.total_price', 'p.product_name')
+        ->select( 's.price', 's.quantity', 's.total_price', 's.created_at', 'p.product_name')
         ->get();
         return view('backend.pages.sales.index', compact('transactions'));
     }
@@ -49,7 +49,7 @@ class SalesController extends Controller
 
         DB::table('sales')->insert($data);
 
-        return redirect()->route('product.index')->with('success', 'Sales successfully');
+        return redirect()->route('sales.index')->with('success', 'Sales successfully');
     }
 
 }

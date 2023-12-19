@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string('stock')->nullable();
             $table->string('thumbnail');
             $table->decimal('price', 8, 2);
-            $table->integer('quantity');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });

@@ -62,15 +62,6 @@
                                     <div class="col-lg-6 mb-3">
                                         <div class="mb-lg-0">
                                             <label for="choices-status-input" class="form-label">
-                                                Quantity
-                                                <span class="text-danger">*</span>
-                                            </label>
-                                            <input type="text" name="quantity" class="form-control" value="{{ $product->quantity }}">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 mb-3">
-                                        <div class="mb-lg-0">
-                                            <label for="choices-status-input" class="form-label">
                                                 Stock
                                                 <span class="text-danger">*</span>
                                             </label>

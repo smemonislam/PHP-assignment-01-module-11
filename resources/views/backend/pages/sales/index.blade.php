@@ -52,17 +52,20 @@
                                         <th>Product Name</th>
                                         <th>Price</th>
                                         <th>Quantity</th>
+                                        <th>Total Price</th>
+                                        <th>Date</th>
                                     </tr>
                                 </thead>
                                 <tbody>
 
-                                    
                                     @foreach ($transactions as $transaction)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $transaction->product_name }}</td>
                                         <td>{{ $transaction->price }}</td>
                                         <td>{{ $transaction->quantity }}</td>
+                                        <td>{{ $transaction->price * $transaction->quantity }}</td>
+                                        <td>{{ $transaction->created_at }}</td>
                                     </tr>
                                     @endforeach
                                 </tbody>
