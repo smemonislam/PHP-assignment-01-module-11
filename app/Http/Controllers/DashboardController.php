@@ -14,6 +14,7 @@ class DashboardController extends Controller
         $todaySalesTotal = DB::table('sales')
                         ->whereDate('created_at', Carbon::today())
                         ->sum('total_price');
+                        
         // Yesterday Sales
         $yesterdaySalesTotal = DB::table('sales')
                         ->whereDate('created_at', Carbon::yesterday())
@@ -21,15 +22,14 @@ class DashboardController extends Controller
 
         // This Month Sales
         $thisMonthSalesTotal = DB::table('sales')
+                        ->whereYear('created_at', Carbon::now()->year)
                         ->whereMonth('created_at', Carbon::now()->month)
                         ->sum('total_price');
 
-        // Last Month Sales
-        $lastMonth = Carbon::now()->subMonth();
-        $lastMonthNumber = $lastMonth->month;
-
+        // Last Month Sales                
         $lastMonthSalesTotal = DB::table('sales')
-                        ->whereMonth('created_at', $lastMonthNumber)
+                        ->whereYear('created_at', Carbon::now()->subMonth()->year)
+                        ->whereMonth('created_at', Carbon::now()->subMonth()->month)
                         ->sum('total_price');
 
         return view ("backend.dashboard.index", compact('todaySalesTotal', 'yesterdaySalesTotal', 'thisMonthSalesTotal', 'lastMonthSalesTotal'));
