@@ -29,6 +29,17 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card">
+                        <div class="card-header border-0">
+                            <div class="row g-4">
+                                <div class="col-sm-auto">
+                                    <div>
+                                        <a href="{{ route('product.index') }}" class="btn btn-success"
+                                            id="addproduct-btn"><i class="ri-add-line align-bottom me-1"></i> Back</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
                         <div class="card-body">
                             @if ($errors->any())
                                 <div class="alert alert-danger">
@@ -63,7 +74,7 @@
                                     <div class="col-lg-6 mb-3">
                                         <div class="mb-lg-0">
                                             <label for="choices-status-input" class="form-label">
-                                                Stock
+                                                Quantity
                                                 <span class="text-danger">*</span>
                                             </label>
                                             <input type="text" name="stock" class="form-control" value="{{ old('stock') }}">
@@ -78,7 +89,7 @@
                                             <input type="file" name="thumbnail" class="form-control">
                                         </div>
                                     </div>
-                                    <div class="col-lg-6 mb-3">
+                                    <div class="col-lg-12 mb-3">
                                         <div class="mb-lg-0">
                                             <label for="choices-status-input" class="form-label"> 
                                                 Short Description

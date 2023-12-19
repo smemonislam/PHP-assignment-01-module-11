@@ -1,6 +1,6 @@
 <div class="app-menu navbar-menu">
     <!-- LOGO -->
-    <div class="navbar-brand-box">
+    {{-- <div class="navbar-brand-box">
         <!-- Dark Logo-->
         <a href="{{ route('dashboard') }}" class="logo logo-dark">
             <span class="logo-sm">
@@ -23,7 +23,7 @@
             id="vertical-hover">
             <i class="ri-record-circle-line"></i>
         </button>
-    </div>
+    </div> --}}
 
     <div id="scrollbar">
         <div class="container-fluid">

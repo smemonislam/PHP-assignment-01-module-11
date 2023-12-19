@@ -13,6 +13,7 @@ class SalesController extends Controller
         $transactions = DB::table('sales as s')
         ->join('products as p', 'p.id', 's.product_id')
         ->select( 's.price', 's.quantity', 's.total_price', 's.created_at', 'p.product_name')
+        ->latest()
         ->get();
         return view('backend.pages.sales.index', compact('transactions'));
     }

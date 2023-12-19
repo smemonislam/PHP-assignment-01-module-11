@@ -51,7 +51,7 @@
                                         <th>Sl</th>
                                         <th>Product Name</th>
                                         <th>Price</th>
-                                        <th>Stock</th>
+                                        <th>Quantity</th>
                                         <th>Thumbnail</th>
                                         <th>Action</th>
                                     </tr>
