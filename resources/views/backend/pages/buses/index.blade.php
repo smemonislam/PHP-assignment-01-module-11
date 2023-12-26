@@ -41,42 +41,31 @@
                             </div>
                         </div>
                         <!-- /.card-header -->
-                        <div class="card-body">
-                            @if(session()->has('success'))
-                                <div class="alert alert-success">{{ session('success') }}</div>
-                            @endif
+                        <div class="card-body">                            
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
                                         <th>Sl</th>
                                         <th>Bus Name</th>
-                                        <th>Price</th>
-                                        <th>Quantity</th>
-                                        <th>Thumbnail</th>
+                                        <th>Bus Model</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-
-                                    
-                                    {{-- @foreach ($Bus as $Bus)
+                                    @foreach ($bus_list as $bus)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $Bus->Bus_name }}</td>
-                                        <td>{{ $Bus->price }}</td>
-                                        <td>{{ $Bus->stock }}</td>
-                                        <td>
-                                            <img src="{{ asset('uploads/Bus/' . $Bus->thumbnail) }}" alt="" width="100" height="100">
-                                        </td>
+                                        <td>{{ $bus->bus_name }}</td>
+                                        <td>{{ $bus->bus_model }}</td>
                                         <td>                                            
                                             <div class="d-flex">
-                                                <a class="btn btn-info btn-sm d-inline-block me-2" href="{{ route('Bus.edit', $Bus->id) }}">
+                                                <a class="btn btn-info btn-sm d-inline-block me-2" href="{{ route('buses.edit', $bus->id) }}">
                                                     <i class="fas fa-pencil-alt">
                                                     </i>
                                                     Edit
                                                 </a>
     
-                                                <form action="{{ route('Bus.destroy', $Bus->id) }}" method="POST">
+                                                <form action="{{ route('buses.destroy', $bus->id) }}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button class="btn btn-danger btn-sm">
@@ -87,7 +76,7 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    @endforeach --}}
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

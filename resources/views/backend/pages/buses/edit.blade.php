@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title','IMS | Add Bus')
+@section('title','IMS | Edit Bus')
 @section('content')
 
 
@@ -12,12 +12,12 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                        <h4 class="mb-sm-0">Bus -> Bus List</h4>
+                        <h4 class="mb-sm-0">Bus -> Edit Bus</h4>
 
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
                                 <li class="breadcrumb-item"><a href="javascript: void(0);">Bus</a></li>
-                                <li class="breadcrumb-item active">Bus List</li>
+                                <li class="breadcrumb-item active">Edit Bus</li>
                             </ol>
                         </div>
 
@@ -41,6 +41,10 @@
                             </div>
                         </div>
                         <div class="card-body">
+                            @if(session()->has('success'))
+                                <div class="alert alert-success" id="success-message">{{ session('success') }}</div>
+                            @endif
+
                             @if ($errors->any())
                                 <div class="alert alert-danger">
                                     <ul>
@@ -50,8 +54,9 @@
                                     </ul>
                                 </div>
                             @endif
-                            <form action="{{ route('buses.store') }}" method="POST">
+                            <form action="{{ route('buses.update', $bus->id) }}" method="POST">
                                 @csrf
+                                @method('PUT')
                                 <div class="row">
                                     <div class="col-lg-6 mb-3">
                                         <div class="mb-lg-0">
@@ -59,7 +64,7 @@
                                                 Bus Name
                                                 <span class="text-danger">*</span>
                                             </label>
-                                            <input type="text" name="bus_name" class="form-control" value="{{ old('bus_name') }}">
+                                            <input type="text" name="bus_name" class="form-control" value="{{ old('bus_name', $bus->bus_name) }}">
                                         </div>
                                     </div>
                                     <div class="col-lg-6 mb-3">
@@ -68,7 +73,7 @@
                                                 Bus Model
                                                 <span class="text-danger">*</span>
                                             </label>
-                                            <input type="text" name="bus_model" class="form-control" value="{{ old('bus_model') }}">
+                                            <input type="text" name="bus_model" class="form-control" value="{{ old('bus_model', $bus->bus_model) }}">
                                         </div>
                                     </div>
                                     <button type="submit" class="btn btn-info">Save</button>
