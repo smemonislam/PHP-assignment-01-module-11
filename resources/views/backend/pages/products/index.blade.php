@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title','IMS | List of Products')
+@section('title','IMS | List of Bus')
 
 @section('content')
 
@@ -12,11 +12,11 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                        <h4 class="mb-sm-0">Product -> List</h4>
+                        <h4 class="mb-sm-0">Bus -> List</h4>
 
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
-                                <li class="breadcrumb-item"><a href="javascript: void(0);">Products</a></li>
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">Bus</a></li>
                                 <li class="breadcrumb-item active">List</li>
                             </ol>
                         </div>
@@ -32,9 +32,9 @@
                             <div class="row g-4">
                                 <div class="col-sm-auto">
                                     <div>
-                                        <a href="{{ route('product.create') }}" class="btn btn-success"
-                                            id="addproduct-btn"><i class="ri-add-line align-bottom me-1"></i> Add
-                                            Product</a>
+                                        <a href="{{ route('buses.create') }}" class="btn btn-success"
+                                            id="addBus-btn"><i class="ri-add-line align-bottom me-1"></i> Add
+                                            Bus</a>
                                     </div>
                                 </div>
 
@@ -49,7 +49,7 @@
                                 <thead>
                                     <tr>
                                         <th>Sl</th>
-                                        <th>Product Name</th>
+                                        <th>Bus Name</th>
                                         <th>Price</th>
                                         <th>Quantity</th>
                                         <th>Thumbnail</th>
@@ -59,24 +59,24 @@
                                 <tbody>
 
                                     
-                                    @foreach ($products as $product)
+                                    {{-- @foreach ($Bus as $Bus)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $product->product_name }}</td>
-                                        <td>{{ $product->price }}</td>
-                                        <td>{{ $product->stock }}</td>
+                                        <td>{{ $Bus->Bus_name }}</td>
+                                        <td>{{ $Bus->price }}</td>
+                                        <td>{{ $Bus->stock }}</td>
                                         <td>
-                                            <img src="{{ asset('uploads/product/' . $product->thumbnail) }}" alt="" width="100" height="100">
+                                            <img src="{{ asset('uploads/Bus/' . $Bus->thumbnail) }}" alt="" width="100" height="100">
                                         </td>
                                         <td>                                            
                                             <div class="d-flex">
-                                                <a class="btn btn-info btn-sm d-inline-block me-2" href="{{ route('product.edit', $product->id) }}">
+                                                <a class="btn btn-info btn-sm d-inline-block me-2" href="{{ route('Bus.edit', $Bus->id) }}">
                                                     <i class="fas fa-pencil-alt">
                                                     </i>
                                                     Edit
                                                 </a>
     
-                                                <form action="{{ route('product.destroy', $product->id) }}" method="POST">
+                                                <form action="{{ route('Bus.destroy', $Bus->id) }}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button class="btn btn-danger btn-sm">
@@ -87,7 +87,7 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    @endforeach
+                                    @endforeach --}}
                                 </tbody>
                             </table>
                         </div>

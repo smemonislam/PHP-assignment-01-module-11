@@ -58,14 +58,14 @@
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="#sidebarOffice" data-bs-toggle="collapse" role="button"
                         aria-expanded="false" aria-controls="sidebarOffice">
-                        <i class="ri-apps-2-line"></i> <span data-key="t-apps">Product</span>
+                        <i class="ri-apps-2-line"></i> <span data-key="t-apps">Bus List</span>
                     </a>
                     <div class="collapse menu-dropdown" id="sidebarOffice">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a href="{{ route('product.index') }}" class="nav-link" data-key="t-add">Porduct </a> 
-                                <a href="{{ route('sales.create') }}" class="nav-link" data-key="t-add">Sales </a> 
-                                <a href="{{ route('sales.index') }}" class="nav-link" data-key="t-add">Transaction </a> 
+                                <a href="{{ route('buses.index') }}" class="nav-link" data-key="t-add">Bus</a> 
+                                <a href="" class="nav-link" data-key="t-add">Sales </a> 
+                                <a href="" class="nav-link" data-key="t-add">Transaction </a> 
                             </li>
                         </ul>
                     </div>

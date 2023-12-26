@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title','IMS | Add Product')
+@section('title','IMS | Add Bus')
 @section('content')
 
 
@@ -12,12 +12,12 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                        <h4 class="mb-sm-0">Product -> Product</h4>
+                        <h4 class="mb-sm-0">Bus -> Bus List</h4>
 
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
-                                <li class="breadcrumb-item"><a href="javascript: void(0);">Products</a></li>
-                                <li class="breadcrumb-item active">Products</li>
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">Bus</a></li>
+                                <li class="breadcrumb-item active">Bus List</li>
                             </ol>
                         </div>
 
@@ -33,7 +33,7 @@
                             <div class="row g-4">
                                 <div class="col-sm-auto">
                                     <div>
-                                        <a href="{{ route('product.index') }}" class="btn btn-success"
+                                        <a href="{{ route('buses.index') }}" class="btn btn-success"
                                             id="addproduct-btn"><i class="ri-add-line align-bottom me-1"></i> Back</a>
                                     </div>
                                 </div>
@@ -50,59 +50,25 @@
                                     </ul>
                                 </div>
                             @endif
-                            <form action="{{ route('product.store') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('buses.store') }}" method="POST">
                                 @csrf
                                 <div class="row">
                                     <div class="col-lg-6 mb-3">
                                         <div class="mb-lg-0">
                                             <label for="choices-status-input" class="form-label">
-                                                Product Name
+                                                Bus Name
                                                 <span class="text-danger">*</span>
                                             </label>
-                                            <input type="text" name="product_name" class="form-control" value="{{ old('product_name') }}">
+                                            <input type="text" name="bus_name" class="form-control" value="{{ old('bus_name') }}">
                                         </div>
                                     </div>
                                     <div class="col-lg-6 mb-3">
                                         <div class="mb-lg-0">
                                             <label for="choices-status-input" class="form-label">
-                                                Price
+                                                Bus Model
                                                 <span class="text-danger">*</span>
                                             </label>
-                                            <input type="text" name="price" class="form-control" value="{{ old('price') }}">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 mb-3">
-                                        <div class="mb-lg-0">
-                                            <label for="choices-status-input" class="form-label">
-                                                Quantity
-                                                <span class="text-danger">*</span>
-                                            </label>
-                                            <input type="text" name="stock" class="form-control" value="{{ old('stock') }}">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 mb-3">
-                                        <div class="mb-lg-0">
-                                            <label for="choices-status-input" class="form-label">
-                                                Product Thumbnail
-                                                <span class="text-danger">*</span>
-                                            </label>
-                                            <input type="file" name="thumbnail" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 mb-3">
-                                        <div class="mb-lg-0">
-                                            <label for="choices-status-input" class="form-label"> 
-                                                Short Description
-                                            </label>
-                                            <input type="text" name="short_desc" class="form-control" value="{{ old('short_desc') }}">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 mb-3">
-                                        <div class="mb-lg-0">
-                                            <label for="choices-status-input" class="form-label">
-                                                Description
-                                            </label>
-                                            <textarea name="description" class="form-control" id="" cols="30" rows="10">{{ old('description') }}</textarea>
+                                            <input type="text" name="bus_model" class="form-control" value="{{ old('bus_model') }}">
                                         </div>
                                     </div>
                                     <button type="submit" class="btn btn-info">Save</button>

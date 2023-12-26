@@ -1,9 +1,8 @@
 <?php
 
-use App\Http\Controllers\SalesController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BusController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +16,5 @@ use App\Http\Controllers\ProductController;
 */
 
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-Route::resource('/product', ProductController::class);
-Route::get('/sales/index', [SalesController::class, 'index'])->name('sales.index');
-Route::get('/sales/create', [SalesController::class, 'create'])->name('sales.create');
-Route::post('/sales/store', [SalesController::class, 'store'])->name('sales.store');
+
+Route::resource('/buses', BusController::class);
